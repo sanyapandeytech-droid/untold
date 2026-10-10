@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a18">
+  <meta name="description" content="A quiet, anonymous space to leave a thought. Unsaid is a local demo; nothing is shared with other users.">
+  <title>Unsaid — Anonymous Thoughts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Unsaid home">
+      <span class="brand-mark" aria-hidden="true">u.</span>
+      <span>unsaid</span>
+    </a>
+    <a class="header-link" href="#community">Explore thoughts <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A little space for the unsaid</p>
+        <h1 id="hero-title">Some thoughts need<br>a <span>place to land.</span></h1>
+        <p class="hero-description">Leave a thought. Let it be heard. No names, no profiles—just words, exactly as they are.</p>
+        <a class="hero-link" href="#write">Find your words <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="moon"></div>
+        <div class="spark spark-one">✳</div>
+        <div class="spark spark-two">✦</div>
+        <div class="spark spark-three">·</div>
+        <div class="art-note">let it<br>out.</div>
+      </div>
+    </section>
+
+    <div class="demo-notice" role="note">
+      <span class="notice-icon" aria-hidden="true">✦</span>
+      <p><strong>Local demo:</strong> thoughts and reactions are saved only in this browser. They are not shared with other people.</p>
+    </div>
+
+    <section class="composer-section" id="write" aria-labelledby="composer-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your space</p>
+          <h2 id="composer-title">What’s on your mind?</h2>
+        </div>
+        <span class="private-label"><span aria-hidden="true">◉</span> Anonymous by design</span>
+      </div>
+      <form id="thought-form" class="composer-card" novalidate>
+        <label class="visually-hidden" for="thought-input">Write an anonymous thought</label>
+        <textarea id="thought-input" name="thought" maxlength="500" placeholder="The thing I’ve been meaning to say is…" aria-describedby="input-help character-count form-error" required></textarea>
+        <div class="composer-meta">
+          <span id="input-help">A thought can be messy. That’s okay.</span>
+          <span id="character-count" aria-live="polite">0 / 500</span>
+        </div>
+        <div class="composer-divider"></div>
+        <div class="composer-bottom">
+          <fieldset class="category-picker">
+            <legend>Choose a feeling</legend>
+            <div class="category-options">
+              <label class="category-option"><input type="radio" name="category" value="Life" checked><span>✳ Life</span></label>
+              <label class="category-option"><input type="radio" name="category" value="Dreams"><span>☾ Dreams</span></label>
+              <label class="category-option"><input type="radio" name="category" value="Relationships"><span>♡ Relationships</span></label>
+              <label class="category-option"><input type="radio" name="category" value="Confessions"><span>◌ Confessions</span></label>
+              <label class="category-option"><input type="radio" name="category" value="Motivation"><span>✦ Motivation</span></label>
+            </div>
+          </fieldset>
+          <button class="submit-button" type="submit">Let it out <span aria-hidden="true">↗</span></button>
+        </div>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+      </form>
+      <p id="toast" class="toast" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="community-section" id="community" aria-labelledby="community-title">
+      <div class="section-heading community-heading">
+        <div>
+          <p class="eyebrow">The quiet corner</p>
+          <h2 id="community-title">Thoughts left here</h2>
+          <p class="community-subtitle">A few words from the demo collection. Take what you need, leave what you don’t.</p>
+        </div>
+        <label class="filter-control" for="category-filter">
+          <span>Show</span>
+          <select id="category-filter" aria-label="Filter thoughts by category">
+            <option value="All">All thoughts</option>
+            <option value="Life">Life</option>
+            <option value="Dreams">Dreams</option>
+            <option value="Relationships">Relationships</option>
+            <option value="Confessions">Confessions</option>
+            <option value="Motivation">Motivation</option>
+          </select>
+        </label>
+      </div>
+      <div id="thought-feed" class="thought-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <span aria-hidden="true">☾</span>
+        <h3>No thoughts here just yet</h3>
+        <p>Be the first to leave one in this category.</p>
+        <a href="#write">Write a thought <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#" aria-label="Unsaid home">
+      <span class="brand-mark" aria-hidden="true">u.</span>
+      <span>unsaid</span>
+    </a>
+    <p>A soft landing place for your thoughts.</p>
+    <span class="footer-note">Local demo · Nothing is shared</span>
+  </footer>
+</body>
+</html>
